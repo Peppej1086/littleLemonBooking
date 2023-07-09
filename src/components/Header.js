@@ -1,5 +1,5 @@
 import React from 'react';
-import fotoRestaurant from '../assets/restaurant.jpg'
+import fotoRestaurant from '../assets/restaurant.jpg';
 
 function Header() {
   return (

@@ -1,8 +1,45 @@
-/*----Navbar----*/
+/*----Body----*/
+body {
+  font-family: 'Markazi Text', serif;
+}
 .container {
   max-width: 1310px;
   margin: auto;
 }
+h1 {
+  font-size: 60px;
+  margin: 20px 0;
+  line-height: 0.9;
+}
+h2 {
+  font-size: 50px;
+  margin: 20px 0;
+  line-height: 0.9;
+}
+h3 {
+  font-size: 40px;
+  margin: 20px 0;
+  line-height: 0.9;
+}
+p {
+  font-size: 20px;
+}
+
+/*----Buttons----*/
+.buttonStyle {
+  background: #f4ce14;
+  padding: 10px 25px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,.2);
+  border: 2px solid #f4ce14;
+}
+.buttonStyle a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/*----Navbar----*/
 nav {
   background-color: #ffffff;
   padding: 20px 0;
@@ -10,6 +47,7 @@ nav {
 .navSection {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .navLogoContainer img {
   width: 200px;
@@ -24,8 +62,12 @@ nav {
 .navListContainer a {
   text-decoration: none;
   color: #000000;
-  font-size: 18px;
+  font-size: 20px;
 }
+nav .buttonStyle {
+  font-weight: 600;
+}
+
 /*----Header----*/
 header {
   background-color: #495e57;
@@ -37,11 +79,11 @@ header {
   grid-gap: 20px;
 }
 header h1 {
-  font-size: 50px;
   color: #f4ce14;
 }
 header h3 {
   color: #ffffff;
+  margin-top: 0;
 }
 header p {
   color: #ffffff;
@@ -52,18 +94,28 @@ header p {
   border-radius: 15px;
   box-shadow: 3px 3px 15px rgba(0,0,0,.2);
 }
-.buttonStyle {
-  font-size: 18px;
-  background: #f4ce14;
-  padding: 10px 25px;
-  border-radius: 15px;
-  box-shadow: 3px 3px 15px rgba(0,0,0,.2);
-  border: 2px solid #f4ce14;
+
+/*----Main----*/
+main {
+  padding: 50px 0;
 }
-.buttonStyle a {
-  color: #000000;
-  text-decoration: none;
-  font-weight: 600;
+.mainTitleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  border-bottom: 2px solid #495e57;
+}
+.mainCard img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.mainCardSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 100px;
 }
 /*
 .App {
