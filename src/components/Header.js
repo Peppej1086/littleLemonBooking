@@ -17,7 +17,6 @@ function Header() {
         <div className='headerLastContainer'>
             <img src={fotoRestaurant} alt='Foto Restaurant'/>
         </div>
-
       </div>
     </header>
   );

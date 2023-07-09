@@ -8,21 +8,27 @@ body {
 }
 h1 {
   font-size: 60px;
-  margin: 20px 0;
+  margin: 0 0 20px;
   line-height: 0.9;
 }
 h2 {
   font-size: 50px;
-  margin: 20px 0;
+  margin: 0 0 20px;
   line-height: 0.9;
 }
 h3 {
   font-size: 40px;
-  margin: 20px 0;
+  margin: 0 0 20px;
+  line-height: 0.9;
+}
+h4 {
+  font-size: 30px;
+  margin: 0 0 20px;
   line-height: 0.9;
 }
 p {
   font-size: 20px;
+  margin: 0 0 20px;
 }
 
 /*----Buttons----*/
@@ -77,13 +83,13 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  align-items: center;
 }
 header h1 {
   color: #f4ce14;
 }
 header h3 {
   color: #ffffff;
-  margin-top: 0;
 }
 header p {
   color: #ffffff;
@@ -116,6 +122,119 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 100px;
+  margin-bottom: 50px;
+}
+.mainCard {
+  border-radius: 15px 15px 0 0;
+  background: #f2f2f2;
+  box-shadow: 3px 3px 15px rgba(0,0,0,.2);
+}
+.mainCardTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.mainCardContent {
+  padding: 20px;
+}
+.mainCardText {
+  text-align: justify;
+}
+.mainCardPrice {
+  font-size: 25px;
+  font-weight: 600;
+  color: #495e57;
+}
+.mainCardFooter img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+.mainCardFooter {
+  display: flex;
+  justify-content: space-between;
+}
+.mainTestimonialSection {
+  padding: 50px 0;
+  background-color: #495e57;
+}
+.mainTestimonial {
+  margin-bottom: 50px;
+}
+.mainTestimonial h2 {
+  color: #f4ce14;
+  text-align: center;
+}
+.mainTestimonialCardSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.maniTestimonialCard {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,.2);
+}
+.maniTestimonialCard .cardHeader img {
+  width: 30px;
+}
+.maniTestimonialCard .cardContent img {
+  margin-right: 20px;
+  height: 100px;
+  object-fit: cover;
+  object-position: left;
+}
+.maniTestimonialCard .cardContent h4 {
+  margin-bottom: 0;
+}
+.maniTestimonialCard .cardFlexContent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.mainDescriptionSection {
+  padding-top: 50px;
+}
+.mainLastContainer img {
+  max-width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+.mainDescription {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+.mainLastContainer {
+  position: relative;
+}
+.mainLastContainer img:first-child {
+  width: 60%;
+  position: absolute;
+  right: 0;
+}
+.mainLastContainer img:last-child {
+  width: 60%;
+}
+
+/*----Footer----*/
+footer .container {
+  padding: 50px 0;
+  border-top: 2px solid #495e57;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.footerLogo img {
+  width: 200px;
+}
+footer section li {
+  font-size: 20px;
+  list-style: none;
+}
+footer section ul {
+  padding-left: 0;
 }
 /*
 .App {
