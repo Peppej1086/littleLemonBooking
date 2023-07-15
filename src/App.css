@@ -5,6 +5,7 @@ body {
 .container {
   max-width: 1310px;
   margin: auto;
+  padding: 0 40px;
 }
 h1 {
   font-size: 60px;
@@ -29,6 +30,11 @@ h4 {
 p {
   font-size: 20px;
   margin: 0 0 20px;
+}
+@media only screen and (max-width: 767px) {
+  p {
+    text-align: justify;
+  }
 }
 
 /*----Buttons----*/
@@ -65,6 +71,9 @@ nav {
   list-style: none;
   margin-left: 20px;
 }
+.navList {
+  display: none;
+}
 .navListContainer a {
   text-decoration: none;
   color: #000000;
@@ -73,7 +82,19 @@ nav {
 nav .buttonStyle {
   font-weight: 600;
 }
-
+@media only screen and (min-width: 991px) {
+  .burgerIcon {
+    display: none;
+  }
+  .navList {
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .navLogoContainer img {
+    width: 150px;
+  }
+}
 /*----Header----*/
 header {
   background-color: #495e57;
@@ -100,6 +121,17 @@ header p {
   border-radius: 15px;
   box-shadow: 3px 3px 15px rgba(0,0,0,.2);
 }
+@media only screen and (max-width: 767px) {
+  .headerSection {
+    display: block;
+  }
+  .headerFirstConteiner {
+    margin-bottom: 50px;
+  }
+  header p {
+    width: 100%;
+  }
+}
 
 /*----Main----*/
 main {
@@ -108,7 +140,6 @@ main {
 .mainTitleSection {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 50px;
   border-bottom: 2px solid #495e57;
 }
@@ -217,8 +248,42 @@ main {
 .mainLastContainer img:last-child {
   width: 60%;
 }
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .mainCardSection {
+    grid-gap: 20px;
+  }
+  .mainCardSection .mainCardTitle {
+    display: block;
+  }
+  .mainCardSection .mainCardTitle h4 {
+    margin-bottom: 0;
+  }
+  .mainTestimonialCardSection {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .mainCardSection {
+    display: block;
+  }
+  .mainCardSection .mainCard {
+    margin-bottom: 50px;
+  }
+  .mainTestimonialCardSection {
+    display: block;
+  }
+  .maniTestimonialCard {
+    margin-bottom: 50px;
+  }
+  .mainDescription {
+    display: block;
+  }
+}
 
 /*----Footer----*/
+footer {
+  padding: 0 40px;
+}
 footer .container {
   padding: 50px 0;
   border-top: 2px solid #495e57;
@@ -235,6 +300,23 @@ footer section li {
 }
 footer section ul {
   padding-left: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .footerLogo {
+    grid-column: 1 / span 4;
+    text-align: center;
+  }
+  footer .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .container {
+    display: block;
+  }
+  footer .container section {
+    margin-bottom: 50px;
+  }
 }
 /*
 .App {
