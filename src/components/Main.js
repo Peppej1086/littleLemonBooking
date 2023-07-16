@@ -189,7 +189,6 @@ function Main() {
               <img src={food} alt='food' />
             </div>
           </div>
-
         </div>
       </div>
     </main>

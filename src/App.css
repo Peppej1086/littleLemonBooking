@@ -78,9 +78,17 @@ nav {
   text-decoration: none;
   color: #000000;
   font-size: 20px;
+  transition: all 0.5s;
+}
+.navListContainer a:hover {
+  color: #f4ce14;
+  transition: all 0.5s;
 }
 nav .buttonStyle {
   font-weight: 600;
+}
+nav .buttonStyle:hover {
+  background-color: #495e57;
 }
 @media only screen and (min-width: 991px) {
   .burgerIcon {
@@ -134,14 +142,12 @@ header p {
 }
 
 /*----Main----*/
-main {
-  padding: 50px 0;
-}
 .mainTitleSection {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
   border-bottom: 2px solid #495e57;
+  margin-top: 50px;
 }
 .mainCard img {
   width: 100%;
@@ -224,7 +230,7 @@ main {
   margin-bottom: 20px;
 }
 .mainDescriptionSection {
-  padding-top: 50px;
+  padding: 50px 0;
 }
 .mainLastContainer img {
   max-width: 100%;
@@ -316,6 +322,27 @@ footer section ul {
   footer .container section {
     margin-bottom: 50px;
   }
+}
+
+/*----About Page----*/
+.backgroundLandingPages {
+  width: 100%;
+  min-height: 50vh;
+  background-image: url(./assets/restaurant.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pagesHeading {
+  color: #f4ce14;
+  margin-bottom: 0;
+  background: #495e57;
+  padding: 20px 40px;
+  border-radius: 20px;
 }
 /*
 .App {
