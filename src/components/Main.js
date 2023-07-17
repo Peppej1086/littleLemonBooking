@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useReducer } from 'react';
 import salad from '../assets/salad.jpg';
 import bruschetta from '../assets/bruchetta.png';
 import dessert from '../assets/dessert.jpg';
@@ -9,9 +10,47 @@ import olivia from '../assets/Olivia.jpg';
 import sofia from '../assets/Sophia.jpg';
 import ethan from '../assets/Ethan.jpg';
 import food from '../assets/restauranfood.jpg';
-import collegues from '../assets/Mario and Adrian b.jpg'
+import collegues from '../assets/Mario and Adrian b.jpg';
+import BookingForm from './BookingForm';
+import { fetchAPI } from './Api';
 
 function Main() {
+  const [initialTimes] = useState([
+    '17:00',
+    '18:00',
+    '19:00',
+    '20:00',
+    '21:00',
+    '22:00'
+  ]);
+
+  function updateTimes(state, action) {
+    const { date } = action;
+    const availableTimes = fetchAPI(date);
+    return availableTimes;
+  }  
+
+  // Funzione per inizializzare lo stato degli orari disponibili
+  function initializeTimes() {
+    const today = new Date();
+    const todayString = today.toISOString().slice(0, 10);
+    const availableTimes = fetchAPI(todayString);
+    return availableTimes;
+  }
+
+  // Definiamo il reducer per gestire lo stato degli orari disponibili
+  const timesReducer = (state, action) => {
+    switch (action.type) {
+      case 'UPDATE_TIMES':
+        return updateTimes(action.date);
+      default:
+        return state;
+    }
+  };
+
+  // Utilizziamo useReducer per gestire lo stato degli orari disponibili
+  const [availableTimes, dispatchTimes] = useReducer(timesReducer, initialTimes, initializeTimes);
+
   return (
     <main>
       <div className='container'>
@@ -191,6 +230,7 @@ function Main() {
           </div>
         </div>
       </div>
+      <BookingForm availableTimes={availableTimes} initializeTimes={initializeTimes} dispatchTimes={dispatchTimes} />
     </main>
   );
 }

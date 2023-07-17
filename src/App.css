@@ -344,6 +344,21 @@ footer section ul {
   padding: 20px 40px;
   border-radius: 20px;
 }
+
+/*---Booking Form---*/
+.formContainer {
+  padding: 50px 0;
+}
+.formContainer form {
+  display: grid;
+  max-width: 200px;
+  gap: 5px;
+  text-align: center;
+  margin: auto;
+}
+.formContainer input, select {
+  margin-bottom: 25px;
+}
 /*
 .App {
   text-align: center;
