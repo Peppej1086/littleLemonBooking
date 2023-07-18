@@ -15,6 +15,6 @@ test('initializeTimes returns the expected initial state', () => {
 
 test('updateTimes returns the same value as the provided state', () => {
   const state = ['17:00', '18:00', '19:00'];
-  const updatedState = updateTimes(state);
+  const updatedState = updateTimes(state, { date: '2023-07-17' });
   expect(updatedState).toEqual(state);
 });

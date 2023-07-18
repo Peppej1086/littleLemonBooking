@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useReducer } from 'react';
+import { useState, useReducer, useEffect } from 'react';
 import salad from '../assets/salad.jpg';
 import bruschetta from '../assets/bruchetta.png';
 import dessert from '../assets/dessert.jpg';
@@ -13,6 +13,8 @@ import food from '../assets/restauranfood.jpg';
 import collegues from '../assets/Mario and Adrian b.jpg';
 import BookingForm from './BookingForm';
 import { fetchAPI } from './Api';
+import { useNavigate } from 'react-router-dom';
+import { submitAPI } from './Api';
 
 function Main() {
   const [initialTimes] = useState([
@@ -28,7 +30,7 @@ function Main() {
     const { date } = action;
     const availableTimes = fetchAPI(date);
     return availableTimes;
-  }  
+  }
 
   // Funzione per inizializzare lo stato degli orari disponibili
   function initializeTimes() {
@@ -42,14 +44,27 @@ function Main() {
   const timesReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_TIMES':
-        return updateTimes(action.date);
+        return updateTimes(state, action);
       default:
         return state;
     }
   };
 
+  const navigate = useNavigate();
+
+  const submitForm = (formData) => {
+    const success = submitAPI(formData);
+    if (success) {
+      navigate('/confirmed-booking');
+    }
+  };
+
   // Utilizziamo useReducer per gestire lo stato degli orari disponibili
   const [availableTimes, dispatchTimes] = useReducer(timesReducer, initialTimes, initializeTimes);
+
+  useEffect(() => {
+    dispatchTimes({ type: 'UPDATE_TIMES', date: new Date().toISOString().slice(0, 10) });
+  }, []);
 
   return (
     <main>
@@ -230,7 +245,13 @@ function Main() {
           </div>
         </div>
       </div>
-      <BookingForm availableTimes={availableTimes} initializeTimes={initializeTimes} dispatchTimes={dispatchTimes} />
+      <BookingForm
+        availableTimes={availableTimes}
+        initializeTimes={initializeTimes}
+        dispatchTimes={dispatchTimes}
+        submitForm={submitForm}
+      />
+
     </main>
   );
 }
